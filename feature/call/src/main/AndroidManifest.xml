@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application>
+        <service
+            android:name=".IncomingCallService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <activity
+            android:name=".CallActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:showOnLockScreen="true"
+            android:taskAffinity="com.smartreminder.call"
+            android:theme="@style/Theme.SmartReminder.Call" />
+    </application>
+
+</manifest>
